@@ -17,6 +17,7 @@ class CategoryAndDescription extends React.Component{
 
     render(props){
       return ( 
+        <div style={{padding: 20}}>
       <React.Fragment>
         <Grid container spacing={24}>
           <Grid item xs={12}>
@@ -24,7 +25,7 @@ class CategoryAndDescription extends React.Component{
               required
               id="category"
               name="category"
-              label="Category"
+              label="Type of Service: ex: plumber or electrician"
               fullWidth
               autoComplete="category"
               onChange={e => {
@@ -39,7 +40,7 @@ class CategoryAndDescription extends React.Component{
               required
               id="description"
               name="description"
-              label="Description"
+              label="Description of Service or Specialty"
               fullWidth
               autoComplete="description"
               onChange={e => {
@@ -51,6 +52,7 @@ class CategoryAndDescription extends React.Component{
           </Grid>
         </Grid>
       </React.Fragment>
+      </div>
     );
   }
 }

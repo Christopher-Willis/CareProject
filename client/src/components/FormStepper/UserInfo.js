@@ -17,6 +17,7 @@ class UserInfo extends React.Component{
 
     render(props){
       return ( 
+        <div style={{padding: 20}}>
       <React.Fragment>
         <Grid container spacing={24}>
           <Grid item xs={12}>
@@ -52,7 +53,6 @@ class UserInfo extends React.Component{
           <Grid item xs={12}>
             <TextField
               type="email"
-              required
               id="email"
               name="email"
               label="Email"
@@ -85,6 +85,7 @@ class UserInfo extends React.Component{
           </Grid>
         </Grid>
       </React.Fragment>
+      </div>
     );
   }
 }

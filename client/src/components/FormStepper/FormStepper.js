@@ -10,7 +10,8 @@ import Button from '@material-ui/core/Button';
 
 import CategoryAndDescription from "./CategoryAndDescription";
 import UserInfo from "./UserInfo";
-import WhenWhere from "./WhenWhere"
+import WhenWhere from "./WhenWhere";
+// import Confirmation from "./Confirmation"
 
 
 const styles = theme => ({
@@ -28,10 +29,34 @@ const styles = theme => ({
     marginTop: theme.spacing.unit,
     marginBottom: theme.spacing.unit,
   },
+  appBar: {
+    position: 'relative',
+  },
+  layout: {
+    width: 'auto',
+    marginLeft: theme.spacing.unit * 2,
+    marginRight: theme.spacing.unit * 2,
+    [theme.breakpoints.up(600 + theme.spacing.unit * 2 * 2)]: {
+      width: 600,
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    },
+  },
+  stepper: {
+    padding: `${theme.spacing.unit * 3}px 0 ${theme.spacing.unit * 5}px`,
+  },
+  buttons: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+  },
+  button: {
+    marginTop: theme.spacing.unit * 3,
+    marginLeft: theme.spacing.unit,
+  }
 });
 
 function getSteps() {
-  return ['Information', 'Credentials', 'Confirm!'];
+  return ['Personal Info', 'Service', 'Time & Location', 'Confirm'];
 }
 
 function getStepContent(step) {
@@ -42,6 +67,8 @@ function getStepContent(step) {
       return <CategoryAndDescription/>;
     case 2:
       return <WhenWhere/>
+    case 3:
+    return <WhenWhere/>  
     default:
       return 'Unknown step';
   }
@@ -148,9 +175,11 @@ class FormStepper extends React.Component {
     const steps = getSteps(); 
     const { activeStep } = this.state;
     if(this.state.signUpConfirmed){
-      return <Redirect to='/login'/>
+        return
+    //   return <Redirect to='/login'/>
     }
     return (
+        <main className={classes.layout}>
     <Card className={classes.root}>
     <Stepper activeStep={activeStep}>
         {steps.map((label, index) => {
@@ -218,6 +247,8 @@ class FormStepper extends React.Component {
     )}
     </div>
     </Card>
+    </main>
+    
     );
     }
 }

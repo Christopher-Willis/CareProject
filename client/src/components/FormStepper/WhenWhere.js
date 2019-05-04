@@ -21,7 +21,7 @@ const styles = theme => ({
     textField: {
       marginLeft: theme.spacing.unit,
       marginRight: theme.spacing.unit,
-      width: 200,
+      width: 150,
     },
     root: {
         display: 'flex',
@@ -31,7 +31,11 @@ const styles = theme => ({
       },
     inline: {
       display: 'inline-block',
-    }
+      fontSize: 16,
+    },
+    boxes:{
+      padding: 20
+    },
   });
 
 
@@ -58,8 +62,6 @@ class WhenWhere extends React.Component{
     };
       this.handleChangeTime = this.handleChangeTime.bind(this);
       this.handleChangeTimeEnd = this.handleChangeTimeEnd.bind(this);
-      this.findDays = this.findDays.bind(this);
-
 
       this.handleCheckbox = name => event => {
         this.setState({ [name]: event.target.checked });
@@ -84,7 +86,7 @@ class WhenWhere extends React.Component{
 
     render(props){
       return (
-        <div>
+        <div className={this.classes.boxes}>
         <React.Fragment>
           <Typography variant="h6" gutterBottom>
             Donate Time

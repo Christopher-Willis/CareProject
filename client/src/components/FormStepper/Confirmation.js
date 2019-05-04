@@ -13,12 +13,15 @@ const styles = theme => ({
     paddingBottom: theme.spacing.unit * 2,
     marginBottom: 20
   },
+  boxes: {
+    padding: 20
+  }
 });
 
 function ConfirmPage(props) {
   const { classes } = props;
   return (
-    <div>
+    <div className={this.state.boxes}>
       <div className={classes.root} elevation={1}>
         <Typography variant="h5" component="h3">
           Confirm Your Information!
