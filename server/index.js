@@ -4,8 +4,8 @@ require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-// const getRoutes = require("./routes/getRoutes")
-// const postRoutes = require("./routes/postRoutes")
+const thisRoutes = require("./routes/thisRoutes")
+const tradeAndTimesRoutes = require("./routes/tradeAndTimesRoutes")
 
 const app = express();
 
@@ -28,8 +28,8 @@ const startWebServer = () => {
   // just tester code for sever connection
 
 
-  // app.use(getRoutes)
-  // app.use(postRoutes)
+  app.use(thisRoutes)
+  app.use(tradeAndTimesRoutes)
 
 
 
