@@ -37,23 +37,28 @@ const styles = theme => ({
 
 
 
-class addClass extends React.Component{
+class TradeAndTimeForm extends React.Component{
     constructor(props){
       super(props);
       this.classes = props.classes;
       this.state = {
-        courseName: '', 
         m: false,
         t: false,
         w: false,
         th: false,
         f: false,
-        days: ['m', 't', 'w', 'th', 'f'],
+        name:'',
+        email:'',
+        phone:'',
+        category:'',
+        location:'',
+        days: [],
         rotation: 0,
         rotationDay: '',
         labelWidth: 0,
         startDate: new Date(),
-        endDate: new Date()
+        endDate: new Date(),
+        description:''
       };
       this.handleChangeTime = this.handleChangeTime.bind(this);
       this.handleChangeTimeEnd = this.handleChangeTimeEnd.bind(this);
@@ -107,28 +112,38 @@ class addClass extends React.Component{
       return days.join('')
     }
 
+    // body object is for tradeAndTime model
     handleSubmit(e) {
       e.preventDefault();
       let data = {
-        'courseName': this.state.courseName,
-        'days': this.findDays(),
-        'rotation': this.state.rotation,
-        'rotationDay': this.state.rotationDay,
-        'startTime': this.state.startDate,
-        'endTime': this.state.endDate
+        method:"POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+          name:this.state.name,
+          email:this.state.email,
+          phone:this.state.phone,
+          category:this.state.category,
+          location:this.state.location,
+          days:this.findDays(),
+          startTime:this.state.startDate,
+          endTime:this.state.endDate,
+          description:this.state.description,
+        })
       }
   
-    //   fetch('/api/schedule/add', {
-    //     method: 'POST',
-    //     headers: {
-    //       "Content-Type": "application/json" 
-    //     },
-    //     body: JSON.stringify(data)
-    //   }).then((response) => {
-    //     this.props.getSchedule()
-    //   })
+      fetch("localhost:3001", data).then((res)=>{
+        return res.json();
+      //   fetch('/api/schedule/add', {
+      //     method: 'POST',
+      //     headers: {
+      //       "Content-Type": "application/json" 
+      //     },
+      //     body: JSON.stringify(data)
+      //   }).then((response) => {
+      //     this.props.getSchedule()
+      //   })
+      })
     }
-
 
     render(props){
       return (
@@ -277,4 +292,4 @@ class addClass extends React.Component{
       );
     }
 }
-export default withStyles(styles)(addClass);
+export default withStyles(styles)(TradeAndTimeForm);
