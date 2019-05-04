@@ -1,25 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
+import Form from './components/form';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Route path="/" exact component={Form} />
+        {/* <Route path="/login" exact component={LogIn} />
+        <Route path="/schedule" component={Calendar} /> */}
+      </div>
+      <footer style= {{position:"absolute",left:5,bottom:0,right:0}}> @2019 Rocket.build Hackathon</footer>
+    </Router>
   );
 }
 
