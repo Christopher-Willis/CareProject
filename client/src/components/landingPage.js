@@ -6,27 +6,27 @@ class landingPage extends React.Component {
         return (
             <div>
                 <header>
-                    <div class="logo">
+                    <div className="logo">
                     <img src="https://careportal.org/wp-content/uploads/2019/01/careportal-logo.png" alt=""/>
                     </div>
                 </header>
                 <main>
                     <h1>Search For Your Saving Grace</h1>
-                    <div class="time">
+                    <div className="time">
                         <h3>Donate Your Time</h3>
-                        <button class="b0"> Donate Time </button>
+                        <button className="b0"> Donate Time </button>
                     </div>
-                    <div class="thing">
-                        <h3>I Have a Item(s) to Donate</h3>
-                        <button class="b1">Donate Item</button>
+                    <div className="thing">
+                        <h3>I Have an Item(s) to Donate</h3>
+                        <button className="b1">Donate Item</button>
                     </div>
-                    <div class="trade">
+                    <div className="trade">
                         <h3>Im Skilled!</h3>
-                        <button class="b0">Donate Your Skill's</button>
+                        <button className="b0">Donate Your Skills</button>
                     </div>
-                    <div class="help">
+                    <div className="help">
                         <h3>I just want to help</h3>
-                        <button class="b1">Donate Anything</button>
+                        <button className="b1">Get Started</button>
                     </div>
                 </main>
             </div>
