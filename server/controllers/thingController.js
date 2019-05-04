@@ -14,6 +14,7 @@ exports.create =  function create(req, res) {
     let newThing = new Thing({
         createdDate:newDate,
         category:req.body.category,
+        location:req.body.location,
         pickupOrDropoff:req.body.pickupOrDropoff,
         days:req.body.days,
         startTime:req.body.startTime,
