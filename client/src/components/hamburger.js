@@ -48,14 +48,29 @@ class Hamburger extends React.Component {
         }else{
             extendedBar=""
         }
+
+        let xOrBurger = ""
+        if(this.state.extended){
+            xOrBurger=            
+                <div onClick={(e)=>this.clickBurger(e)} className="change container" >
+                    <div onClick={(e)=>this.clickBurger(e)} className="bar1"></div>
+                    <div onClick={(e)=>this.clickBurger(e)} className="bar2"></div>
+                    <div onClick={(e)=>this.clickBurger(e)} className="bar3"></div>
+                        {extendedBar}
+                </div>
+        }else{
+            xOrBurger=            
+                <div onClick={(e)=>this.clickBurger(e)} className="container" >
+                    <div onClick={(e)=>this.clickBurger(e)} className="bar1"></div>
+                    <div onClick={(e)=>this.clickBurger(e)} className="bar2"></div>
+                    <div onClick={(e)=>this.clickBurger(e)} className="bar3"></div>
+                        {extendedBar}
+                </div>
+        }
+
         return(
             <div onClick={(e)=>this.clickBurger(e)} id="popup">
-            <div onClick={(e)=>this.clickBurger(e)} className="container" >
-            <div onClick={(e)=>this.clickBurger(e)} className="bar1"></div>
-            <div onClick={(e)=>this.clickBurger(e)} className="bar2"></div>
-            <div onClick={(e)=>this.clickBurger(e)} className="bar3"></div>
-                {extendedBar}
-            </div>
+            {xOrBurger}
             </div>
         );
     }
