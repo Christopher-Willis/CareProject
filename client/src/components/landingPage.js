@@ -7,7 +7,7 @@ class landingPage extends React.Component {
             <div>
                 <header>
                     <div className="logo">
-                    <img src="https://careportal.org/wp-content/uploads/2019/01/careportal-logo.png" alt=""/>
+                    <img src="https://careportal.org/wp-content/uploads/2019/01/careportal-logo.png" alt="Care Portal Logo"/>
                     </div>
                 </header>
                 <main>
