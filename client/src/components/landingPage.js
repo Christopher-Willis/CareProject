@@ -5,25 +5,6 @@ class landingPage extends React.Component {
     render() {
         return (
             <div>
-                <div id="popup">
-                    <div class="container" 
-                        // onclick={this.myFunction(this)}
-                        >
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
-                            <div id="popup_window">
-                                <nav class="nv">
-                                    <a class="r" href="#">Get Involved</a>
-                                    <a href="#">Impact</a>
-                                    <a href = "#"> About</a>
-                                    <a href ="#">Contact</a>
-                                    <a href="Submit Sevice">Submit Service</a>
-                                    <a href="Submit Items">Submit Items</a>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
                     <header>
                         <div class="logo">
                         <img src="https://careportal.org/wp-content/uploads/2019/01/careportal-logo.png" alt=""/>
