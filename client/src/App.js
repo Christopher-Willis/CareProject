@@ -1,10 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
-import Form from './components/form';
+import Form from './components/Form/';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
-import Landing from './components/landingPage'
-import Hamburger from './components/hamburger'
 
 function App() {
   return (
