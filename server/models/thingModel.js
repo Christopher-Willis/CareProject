@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 const thingSchema = new mongoose.Schema({
+    name:String,
+    email:String,
+    phone:String,
     category:String,
     location:String,
     pickupOrDropoff:String,

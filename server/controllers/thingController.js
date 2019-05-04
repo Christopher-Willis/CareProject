@@ -12,6 +12,9 @@ exports.list =  function list(req, res) {
 
 exports.create =  function create(req, res) {
     let newThing = new Thing({
+        name:req.body.name,
+        email:req.body.email,
+        phone:req.body.phone,
         createdDate:newDate,
         category:req.body.category,
         location:req.body.location,
