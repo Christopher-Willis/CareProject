@@ -1,7 +1,9 @@
 import React from 'react';
-import Form from './components/Form/';
+// import Form from './components/FormStepper/FormStepper';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
+import Hamburger from './components/hamburger'
+import Landing from './components/landingPage'
 
 function App() {
   return (
