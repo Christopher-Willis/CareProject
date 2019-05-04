@@ -1,0 +1,240 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0
+}
+header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center
+    /* border: 2px red solid */
+    
+}
+.mLogo{
+    height: 200px;
+    margin: 10px;
+}
+.logo img{
+    height: 16px;
+    /* border: 2px green solid */
+    margin: 2em
+}
+.wraper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav a{
+    border: 2px #f63 solid;
+    border-radius: 15%;
+    padding: 5px;
+    background-color: whitesmoke;
+    color:#f63;
+    margin:10px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.nv{
+    animation: lightSpeedIn 1s ease-in;
+}
+@keyframes lightSpeedIn {
+    from {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+}
+
+    60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1;
+}
+
+    80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+}
+
+    to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    }
+}
+.container {
+    display: inline-block;
+    cursor: pointer;
+    /* position: absolute; */
+   
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    margin-right: 10px;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+  }
+  
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color: gray;
+    font-size: 20px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px
+}
+.time{
+    background: #f63;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    /* border: gray 2px solid; */
+    margin: 1.5em;
+    border-radius: 25px;
+    color: white;
+    justify-content: center;
+    align-items: center
+}
+.thing{
+    border: 2px #f63 solid;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    margin: 1.5em;
+    color: #f63;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center
+
+}
+.trade{
+    background: #f63;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    /* border: gray 2px solid; */
+    margin: 1.5em;
+    border-radius: 25px;
+    color: white;
+}
+.help{
+    border: 2px #f63 solid;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    margin: 1.5em;
+    color: #f63;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+}
+h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.b0{
+    color: #f63;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 15px;
+
+}
+.b1{
+    color: whitesmoke;
+    background-color: #f63;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 15px;
+    
+}
+.b1:hover{
+    background-color: cornflowerblue;
+    cursor: help;
+    transform: scale(1.5,1.5)
+}
+.b0:hover{
+    background-color: cornflowerblue;
+    cursor: help;
+    color: white;
+    transform: scale(1.5,1.5)
+
+}
+.don{
+    width: 250px;
+    height: 250px;
+    margin: 2em;
+    border-radius: 20px;
+}
+footer{
+    background: darkgray;
+}
+.box a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    line-height: 2em;
+}
+.box{
+    color:white;
+    background: darkgray;
+    padding: 2em;
+    
+}
+.copyR{
+    color: white;
+    background-color: #555;
+    padding: 2em;
+}
+.mLogo img{
+    height: 50px;
+   
+}
+@media( min-width:767px) {
+    main{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    /* .box1{
+        display: flex;
+        flex-direction: row;
+
+    }
+    .box2{
+        display: flex;
+        flex-direction: row;
+
+    } */
+}
