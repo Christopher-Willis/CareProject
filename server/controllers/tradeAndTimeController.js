@@ -12,6 +12,9 @@ exports.list =  function list(req, res) {
 
 exports.create =  function create(req, res) {
     let newTradeAndTime = new TradeAndTime({
+        name:req.body.name,
+        phone:req.body.phone,
+        email:req.body.email,
         createdDate:newDate, //IF WE NEED IT!
         category:req.body.category,
         location:req.body.location,
