@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
 
 const thingSchema = new mongoose.Schema({
-    name:String,
+    createdDate:String,
+    firstName:String,
+    lastName:String,
     email:String,
     phone:String,
     category:String,
     location:String,
     pickupOrDropoff:String,
-    days:String,
-    startTime:String,
-    //have open availability option on front
-    endTime:String,
+    days:Object,
+    startDate:String,
+    endDate:String,
     description:String
 })
 

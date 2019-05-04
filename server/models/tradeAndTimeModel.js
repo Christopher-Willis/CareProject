@@ -1,14 +1,16 @@
 const mongoose = require('mongoose');
 
 const tradeAndTimeSchema = new mongoose.Schema({
-    name:String,
+    createDate:String,
+    firstName:String,
+    lastName:String,
     email:String,
     phone:String,
     category:String,
     location:String,
-    days:String,
-    startTime:String,
-    endTime:String,
+    days:Object,
+    startDate:String,
+    endDate:String,
     description:String
 })
 
