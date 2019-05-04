@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {list, create} = require('../controllers/thingController')
+const {list, create,update} = require('../controllers/thingController')
 
 router.get('/things',list);
 router.post('/things',create);

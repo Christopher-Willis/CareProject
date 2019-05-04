@@ -4,8 +4,8 @@ require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const thisRoutes = require("./routes/thisRoutes")
-const tradeAndTimesRoutes = require("./routes/tradeAndTimesRoutes")
+const thisRoutes = require("./routes/thingRoutes")
+const tradeAndTimesRoutes = require("./routes/tradeAndTimeRoutes")
 
 const app = express();
 

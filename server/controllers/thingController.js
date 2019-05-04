@@ -1,4 +1,4 @@
-const Thing = require("../models/thing");
+const Thing = require("../models/thingModel");
 
 //get current date and time in mm/dd/yyyy
 var date = new Date();
