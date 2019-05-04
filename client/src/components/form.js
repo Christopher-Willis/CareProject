@@ -10,7 +10,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormLabel from '@material-ui/core/FormLabel';
 import DatePicker from "react-datepicker";
 import Button from '@material-ui/core/Button';
-import { FormGroup, FormControl } from "react-bootstrap";
 import "react-datepicker/dist/react-datepicker.css"
 
 
@@ -27,7 +26,7 @@ const styles = theme => ({
     root: {
         display: 'flex',
       },
-    formControl: {
+    TextField: {
         margin: theme.spacing.unit * 3,
       },
     inline: {
@@ -47,11 +46,12 @@ class TradeAndTimeForm extends React.Component{
         w: false,
         th: false,
         f: false,
-        name:'',
+        firstName:'',
+        lastName: '',
         email:'',
+        location:'',
         phone:'',
         category:'',
-        location:'',
         days: [],
         rotation: 0,
         rotationDay: '',
@@ -115,24 +115,24 @@ class TradeAndTimeForm extends React.Component{
     // body object is for tradeAndTime model
     handleSubmit(e) {
       e.preventDefault();
-      let data = {
-        method:"POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({
-          name:this.state.name,
-          email:this.state.email,
-          phone:this.state.phone,
-          category:this.state.category,
-          location:this.state.location,
-          days:this.findDays(),
-          startTime:this.state.startDate,
-          endTime:this.state.endDate,
-          description:this.state.description,
-        })
-      }
+      // let data = {
+      //   method:"POST",
+      //   headers: {"Content-Type": "application/json"},
+      //   body: JSON.stringify({
+      //     name:this.state.name,
+      //     email:this.state.email,
+      //     phone:this.state.phone,
+      //     category:this.state.category,
+      //     location:this.state.location,
+      //     days:this.findDays(),
+      //     startTime:this.state.startDate,
+      //     endTime:this.state.endDate,
+      //     description:this.state.description,
+      //   })
+      // }
   
-      fetch("localhost:3001", data).then((res)=>{
-        return res.json();
+      // fetch("localhost:3001", data).then((res)=>{
+      //   return res.json();
       //   fetch('/api/schedule/add', {
       //     method: 'POST',
       //     headers: {
@@ -142,7 +142,7 @@ class TradeAndTimeForm extends React.Component{
       //   }).then((response) => {
       //     this.props.getSchedule()
       //   })
-      })
+      // })
     }
 
     render(props){
@@ -153,72 +153,69 @@ class TradeAndTimeForm extends React.Component{
             Donate Time
           </Typography>
           <Grid container spacing={24}>
-          <FormGroup className={this.classes.boxes}>
+          <Grid item xs={12}>
         <FormLabel>
           First Name </FormLabel>
-          <FormControl
+          <TextField
             required={true}
-            className={this.classes.boxSize}
             type="firstName"
             name="firstName"
             onChange={e => {
-              if(this.props.firstName){
-                this.props.firstName(e.target.value)
+              if(this.state.firstName){
+                this.state.firstName(e.target.value)
               }
             }}
             placeholder=" Enter First Name"
           />
-        </FormGroup>
+        </Grid>
 
-          <FormGroup className={this.classes.boxes}>
+        <Grid item xs={12}>
            <FormLabel>Last Name </FormLabel>
-          <FormControl
+          <TextField
             required={true}
-            className={this.classes.boxSize}
             type="lastName"
             name="lastName"
             onChange={e => {
-              if(this.props.lastName){
-                this.props.lastName(e.target.value)
+              if(this.state.lastName){
+                this.state.lastName(e.target.value)
               }
             }}
             placeholder=" Enter Last Name"
             // value={this.state.lastName}
           />
-           </FormGroup>
+           </Grid>
 
-          <FormGroup className={this.classes.boxes}>
+           <Grid item xs={12}>
            <FormLabel>Email </FormLabel>
-          <FormControl
+          <TextField
             required={true}
             className={this.classes.boxSize}
             type="email"
             name="email"
             onChange={e => {
-              if(this.props.email){
-                this.props.email(e.target.value)
+              if(this.state.email){
+                this.state.email(e.target.value)
               }
             }}
             placeholder=" Enter Email Address"
             // value={this.state.email}
           />
-        </FormGroup>
-        <FormGroup className={this.classes.boxes}>
+        </Grid>
+        <Grid item xs={12}>
            <FormLabel>location </FormLabel>
-          <FormControl
+          <TextField
             required={true}
-            className={this.classes.boxSize}
             type="location"
             name="location"
             onChange={e => {
-              if(this.props.location){
-                this.props.location(e.target.value)
+              if(this.state.location){
+                this.state.location(e.target.value)
               }
             }}
             placeholder=" Enter location Address"
             // value={this.state.location}
           />
-        </FormGroup>
+        </Grid>
             <Grid item xs={12}>
               {/* <FormLabel>Option 1 </FormLabel> */}
               <div>
