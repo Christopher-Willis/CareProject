@@ -10,35 +10,18 @@ class AddressForm extends React.Component{
     super(props);
     this.classes = props.classes;
     this.state = {
-      m: false,
-      t: false,
-      w: false,
-      th: false,
-      f: false,
       firstName:'',
       lastName: '',
       email:'',
-      location:'',
       phone:'',
-      category:'',
-      days: [],
-      rotation: 0,
-      rotationDay: '',
-      labelWidth: 0,
-      startDate: new Date(),
-      endDate: new Date(),
-      description:''
     };
   }
 
     render(props){
       return ( 
       <React.Fragment>
-        <Typography variant="h6" gutterBottom>
-          Shipping address
-        </Typography>
         <Grid container spacing={24}>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12}>
             <TextField
               required
               id="firstName"
@@ -46,9 +29,14 @@ class AddressForm extends React.Component{
               label="First name"
               fullWidth
               autoComplete="fname"
+              onChange={e => {
+                if(this.state.firstName){
+                  this.setState({firstName:e.target.value})
+                }
+              }}
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12}>
             <TextField
               required
               id="lastName"
@@ -56,64 +44,45 @@ class AddressForm extends React.Component{
               label="Last name"
               fullWidth
               autoComplete="lname"
+              onChange={e => {
+                if(this.state.lastName){
+                  this.setState({lastName:e.target.value})
+                }
+              }}
             />
           </Grid>
           <Grid item xs={12}>
             <TextField
+              type="email"
               required
-              id="address1"
-              name="address1"
-              label="Address line 1"
+              id="email"
+              name="email"
+              label="Email"
               fullWidth
-              autoComplete="billing address-line1"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              id="address2"
-              name="address2"
-              label="Address line 2"
-              fullWidth
-              autoComplete="billing address-line2"
+              autoComplete="Email"
+              
+              onChange={e => {
+                if(this.state.email){
+                  this.setState({email:e.target.value})
+                }
+              }}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
+              type="number"
+              maxLength="10"
               required
-              id="city"
-              name="city"
-              label="City"
+              id="tel"
+              name="tel"
+              label="Phone Number"
               fullWidth
-              autoComplete="billing address-level2"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField id="state" name="state" label="State/Province/Region" fullWidth />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              id="zip"
-              name="zip"
-              label="Zip / Postal code"
-              fullWidth
-              autoComplete="billing postal-code"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              id="country"
-              name="country"
-              label="Country"
-              fullWidth
-              autoComplete="billing country"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <FormControlLabel
-              control={<Checkbox color="secondary" name="saveAddress" value="yes" />}
-              label="Use this address for payment details"
+              autoComplete="telephone"
+              onChange={e => {
+                if(this.state.phone){
+                  this.setState({phone:e.target.value})
+                }
+              }}
             />
           </Grid>
         </Grid>
