@@ -12,15 +12,16 @@ exports.list =  function list(req, res) {
 
 exports.create =  function create(req, res) {
     let newTradeAndTime = new TradeAndTime({
-        name:req.body.name,
-        phone:req.body.phone,
+        createdDate:newDate,
+        firstName:req.body.firstName,
+        lastName:req.body.lastName,
         email:req.body.email,
-        createdDate:newDate, //IF WE NEED IT!
+        phone:req.body.phone,
         category:req.body.category,
         location:req.body.location,
         days:req.body.days,
-        startTime:req.body.startTime,
-        endTime:req.body.endTime,
+        startDate:req.body.startDate,
+        endDate:req.body.endDate,
         description:req.body.description
     });
     newTradeAndTime.save();

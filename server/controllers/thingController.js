@@ -12,16 +12,17 @@ exports.list =  function list(req, res) {
 
 exports.create =  function create(req, res) {
     let newThing = new Thing({
-        name:req.body.name,
+        createdDate:newDate,
+        firstName:req.body.firstName,
+        lastName:req.body.lastName,
         email:req.body.email,
         phone:req.body.phone,
-        createdDate:newDate,
         category:req.body.category,
         location:req.body.location,
         pickupOrDropoff:req.body.pickupOrDropoff,
         days:req.body.days,
-        startTime:req.body.startTime,
-        endTime:req.body.endTime,
+        startDate:req.body.startDate,
+        endDate:req.body.endDate,
         description:req.body.description
     });
     newThing.save();
