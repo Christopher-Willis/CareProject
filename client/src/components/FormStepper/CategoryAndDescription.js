@@ -1,9 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 
 class CategoryAndDescription extends React.Component{
   constructor(props){
@@ -29,10 +26,9 @@ class CategoryAndDescription extends React.Component{
               fullWidth
               autoComplete="category"
               onChange={e => {
-                if(this.state.category){
-                  this.setState({category:e.target.value})
-                }
-              }}
+                if(this.props.category){
+                  this.props.category(e.target.value)
+              }}}
             />
           </Grid>
           <Grid item xs={12}>
@@ -44,8 +40,8 @@ class CategoryAndDescription extends React.Component{
               fullWidth
               autoComplete="description"
               onChange={e => {
-                if(this.state.description){
-                  this.setState({description:e.target.value})
+                if(this.props.description){
+                  this.props.description(e.target.value)
                 }
               }}
             />
