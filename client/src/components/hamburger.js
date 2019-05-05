@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './landingPage.css';
 
 
@@ -37,12 +38,11 @@ class Hamburger extends React.Component {
             extendedBar=
                 <div id="popup_window">
                     <nav className="nv">
-                        <a className="r" href="#">Get Involved</a>
-                        <a href="#">Impact</a>
-                        <a href = "#"> About</a>
-                        <a href ="#">Contact</a>
-                        <a href="Submit Sevice">Submit Service</a>
-                        <a href="Submit Items">Submit Items</a>
+                        <Link className="r" to="/">Grace Place Home</Link>
+                        <Link to="/">My Impact</Link>
+                        <Link to = "/">My Churches</Link>
+                        <a href ="https://careportal.org/" target="_blank">CarePortal</a>
+                        <Link href ="/">About</Link>
                     </nav>
                 </div>
         }else{
