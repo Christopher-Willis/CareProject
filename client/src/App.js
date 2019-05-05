@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Hamburger/>
+        {/* <Hamburger/> */}
         <div className="App-header"> 
         <Route path="/" exact component={landingPage} />
         <Route path="/form" exact component={FormStepper} />
