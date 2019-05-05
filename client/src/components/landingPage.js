@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
+import logo from './logo.png'
 import './landingPage.css';
 
 class landingPage extends React.Component {
@@ -8,8 +8,7 @@ class landingPage extends React.Component {
         return (
             <div>
                 <header>
-                {/* THis goddamn image doesnt load */}
-                <img src="logoGP.png" alt="Grace Place logo"/>
+                <img className="mLogo" src={logo} alt="Grace Place logo"/>
                     <div className="logo">
                         <img src="https://careportal.org/wp-content/uploads/2019/01/careportal-logo.png" alt="Care Portal Logo"/>
                     </div>
