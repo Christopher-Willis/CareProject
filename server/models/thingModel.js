@@ -8,6 +8,7 @@ const thingSchema = new mongoose.Schema({
     phone:String,
     category:String,
     location:String,
+    organization:String,
     pickupOrDropoff:String,
     days:Object,
     startDate:String,

@@ -19,6 +19,7 @@ exports.create =  function create(req, res) {
         phone:req.body.phone,
         category:req.body.category,
         location:req.body.location,
+        organization:req.body.organization,
         days:req.body.days,
         startDate:req.body.startDate,
         endDate:req.body.endDate,

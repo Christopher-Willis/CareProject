@@ -8,6 +8,7 @@ const tradeAndTimeSchema = new mongoose.Schema({
     phone:String,
     category:String,
     location:String,
+    organization:String,
     days:Object,
     startDate:String,
     endDate:String,
