@@ -13,20 +13,17 @@ const styles = theme => ({
     paddingBottom: theme.spacing.unit * 2,
     marginBottom: 20
   },
-  boxes: {
-    padding: 20
-  }
 });
 
 function ConfirmPage(props) {
   const { classes } = props;
   return (
-    <div className={this.state.boxes}>
+    <div styles={{padding: 20}}>
       <div className={classes.root} elevation={1}>
         <Typography variant="h5" component="h3">
           Confirm Your Information!
         </Typography>
-        <Typography component="p">
+        <Typography component="div">
             <List>
                 <ListItem>
                    First Name: {props.firstName}
@@ -47,7 +44,7 @@ function ConfirmPage(props) {
                     Description: {props.description}
                 </ListItem>
                 <ListItem>
-                    Days: {props.days}
+                    Days: {props.days.mon}
                 </ListItem>
                 <ListItem>
                     Time: {props.startDate} - {props.endDate}
@@ -62,8 +59,8 @@ function ConfirmPage(props) {
   );
 }
 
-ConfirmPage.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+// ConfirmPage.propTypes = {
+//   classes: PropTypes.object.isRequired,
+// };
 
 export default withStyles(styles)(ConfirmPage);
