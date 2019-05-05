@@ -6,7 +6,7 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
-// import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import CategoryAndDescription from "../../containers/CategoryAndDescriptionContainer";
 import UserInfo from "../../containers/UserInfoContainer";
@@ -76,7 +76,7 @@ class FormStepper extends React.Component {
     activeStep: 0,
     completed: {},
     warning: true,
-    signUpConfirmed: false
+    madePost: false
   };
 
   totalSteps = () => getSteps().length;
@@ -140,13 +140,16 @@ class FormStepper extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let data = {
-        'firstName': 'bob'
-    //   'firstName': this.props.firstName,
-    //   'lastName': this.props.lastName,
-    //   'email': this.props.email,
-    //   'username': this.props.username,
-    //   'password': this.props.password,
-    //   'passwordConfirmed': this.props.passwordConfirmed
+      'createdDate':new Date(),
+      'firstName':this.props.firstName,
+      'lastName':this.props.lastName,
+      'email':this.props.email,
+      'phone':this.props.phone,
+      'category':this.props.category,
+      'location':this.props.location,
+      'startDate':this.props.startDate,
+      'endDate':this.props.endDate,
+      'description':this.props.description
     }
     console.log(data)
 
@@ -154,7 +157,7 @@ class FormStepper extends React.Component {
     if(notValid){
       return alert('you are missing a field')
     }
-    fetch('/api/user', {
+    fetch('/things', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json" 
@@ -162,7 +165,7 @@ class FormStepper extends React.Component {
       body: JSON.stringify(data)
     }).then(()=>{
       this.setState({
-        signUpConfirmed: true
+        madePost: true
       })
     });
   }
@@ -171,9 +174,8 @@ class FormStepper extends React.Component {
     const { classes } = this.props;
     const steps = getSteps(); 
     const { activeStep } = this.state;
-    if(this.state.signUpConfirmed){
-        return
-    //   return <Redirect to='/login'/>
+    if(this.state.madePost){
+      return <Redirect to='/'/>
     }
     return (
         <main className={classes.layout}>
