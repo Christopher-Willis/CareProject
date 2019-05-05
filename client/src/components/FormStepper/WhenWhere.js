@@ -45,7 +45,6 @@ class WhenWhere extends React.Component{
       super(props);
       this.classes = props.classes;
       this.state = {
-        days: {
             mon: false,
             tue: false,
             wed: false,
@@ -53,7 +52,6 @@ class WhenWhere extends React.Component{
             fri: false,
             sat: false,
             sun: false,
-        },
         startDate: new Date(),
         endDate: new Date(),
         location: '',
@@ -65,8 +63,7 @@ class WhenWhere extends React.Component{
       this.handleChangeTimeEnd = this.handleChangeTimeEnd.bind(this);
 
       this.handleCheckbox = name => event => {
-        // this.setState({[days.name]: event.target.checked})
-        this.props.addDays[name](event.target.checked);
+        this.setState({name: event.target.checked})
       };
 
       this.handleChanges = event => {
@@ -142,7 +139,7 @@ class WhenWhere extends React.Component{
                   <div className={this.classes.inline}>{day}</div>
                   <Checkbox 
                   className={this.classes.inline}
-                  checked={this.props.addDays[day]}
+                  checked={this.state.day}
                   onChange={this.handleCheckbox(day)}
                   value={this.props.addDays[day]}
                   color="primary"
