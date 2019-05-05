@@ -158,7 +158,7 @@ class WhenWhere extends React.Component{
                   onChange={this.handleChangeTime}
                   showTimeSelect
                   showTimeSelectOnly
-                  timeIntervals={1}
+                  timeIntervals={15}
                   dateFormat="h:mm aa"
                   timeCaption="Time"
               />
@@ -170,7 +170,7 @@ class WhenWhere extends React.Component{
                     onChange={this.handleChangeTimeEnd}
                     showTimeSelect
                     showTimeSelectOnly
-                    timeIntervals={1}
+                    timeIntervals={15}
                     dateFormat="h:mm aa"
                     timeCaption="Time"
                 />
