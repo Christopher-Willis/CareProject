@@ -26,9 +26,8 @@ class CategoryAndDescription extends React.Component{
               fullWidth
               autoComplete="category"
               onChange={e => {
-                if(this.props.category){
                   this.props.category(e.target.value)
-              }}}
+              }}
             />
           </Grid>
           <Grid item xs={12}>
@@ -40,9 +39,7 @@ class CategoryAndDescription extends React.Component{
               fullWidth
               autoComplete="description"
               onChange={e => {
-                if(this.props.description){
                   this.props.description(e.target.value)
-                }
               }}
             />
           </Grid>
