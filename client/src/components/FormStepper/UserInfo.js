@@ -29,8 +29,8 @@ class UserInfo extends React.Component{
               fullWidth
               autoComplete="fname"
               onChange={e => {
-                if(this.state.firstName){
-                  this.setState({firstName:e.target.value})
+                if(this.props.firstName){
+                  this.props.firstName(e.target.value)
                 }
               }}
             />
@@ -44,8 +44,8 @@ class UserInfo extends React.Component{
               fullWidth
               autoComplete="lname"
               onChange={e => {
-                if(this.state.lastName){
-                  this.setState({lastName:e.target.value})
+                if(this.props.lastName){
+                  this.props.lastName(e.target.value)
                 }
               }}
             />
@@ -60,8 +60,8 @@ class UserInfo extends React.Component{
               autoComplete="Email"
               
               onChange={e => {
-                if(this.state.email){
-                  this.setState({email:e.target.value})
+                if(this.props.email){
+                  this.props.email(e.target.value)
                 }
               }}
             />
@@ -77,8 +77,8 @@ class UserInfo extends React.Component{
               fullWidth
               autoComplete="telephone"
               onChange={e => {
-                if(this.state.phone){
-                  this.setState({phone:e.target.value})
+                if(this.props.phone){
+                  this.props.phone(e.target.value)
                 }
               }}
             />
