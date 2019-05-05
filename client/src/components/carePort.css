@@ -123,7 +123,8 @@ h1{
     border-radius: 25px;
     color: white;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    box-shadow: 2px 2px #D81111;
 }
 .thing{
     border: 2px #f63 solid;
@@ -134,8 +135,8 @@ h1{
     color: #f63;
     border-radius: 25px;
     justify-content: center;
-    align-items: center
-
+    align-items: center;
+    box-shadow: 2px 2px #D81111;
 }
 .trade{
     background: #f63;
@@ -148,6 +149,7 @@ h1{
     margin: 1.5em;
     border-radius: 25px;
     color: white;
+    box-shadow: 2px 2px #D81111;
 }
 .help{
     border: 2px #f63 solid;
@@ -159,6 +161,7 @@ h1{
     border-radius: 25px;
     justify-content: center;
     align-items: center;
+    box-shadow: 2px 2px #D81111;
 }
 h3{
     margin: 0px;
@@ -173,7 +176,7 @@ h3{
     border-radius: 20px;
     font-size: 20px;
     padding: 15px;
-
+    box-shadow: 2px 2px #D81111;
 }
 .b1{
     color: whitesmoke;
@@ -181,6 +184,7 @@ h3{
     border-radius: 20px;
     font-size: 20px;
     padding: 15px;
+    box-shadow: 2px 2px #D81111;
     
 }
 .b1:hover{

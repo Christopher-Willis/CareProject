@@ -27,25 +27,25 @@ class landingPage extends React.Component {
                         <img className="don" src="https://images.unsplash.com/photo-1439920120577-eb3a83c16dd7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" alt=""/>
                         <p>Register to be helping hands!</p>
                         
-                        <button className="b0"> Donate Time </button>
+                        <Link to="/form"><button className="b0"> Donate Time </button></Link>
                     </div>
                     <div className="thing">
                         <h3> Donate Items and Things</h3>
                         <img className="don" src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt=""/>
                         <p>Do you have old or unwanted items?</p>
-                        <button className="b1">Donate Items</button>
+                        <Link to="/form"><button className="b1">Donate Items</button></Link>
                     </div>
                     <div className="trade">
                         <h3>I am Skilled!</h3>
                         <img className="don" src="https://images.unsplash.com/photo-1500837744038-ec60054ed01e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" alt=""/>
                         <p>Are you a Skilled Tradesman? </p>
-                        <button className="b0">Donate Your Skills</button>
+                        <Link to="/form"><button className="b0">Donate Your Skills</button></Link>
                     </div>
                     <div className="help">
                         <h3>I want to help</h3>
                         <img className="don" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt=""/>
                         <p>Not sure how to help? </p>
-                        <button className="b1">Donate </button>
+                        <Link to="/form"><button className="b1">Donate </button></Link>
                     </div>
                 </main>
             </div>
