@@ -65,24 +65,33 @@ class WhenWhere extends React.Component{
       this.handleChangeTimeEnd = this.handleChangeTimeEnd.bind(this);
 
       this.handleCheckbox = name => event => {
-        this.setState({ [name]: event.target.checked });
+        this.props.addDays[name](event.target.checked);
       };
 
       this.handleChanges = event => {
-        this.setState({ [event.target.name]: event.target.value });
+        this.props[event.target.name](event.target.value);
       };
     }
-  
+    hours12(date) { 
+      return (date.getHours() + 24) % 12 || 12; 
+    }
+    formatTime(d) {
+      let date = new Date(d)
+      let minutes = ('0'+ date.getMinutes()).slice(-2)
+      if (date.getHours() > 11) {
+        return this.hours12(date) + ':' + minutes + 'PM'
+      }  else {
+        return this.hours12(date) + ':' + minutes + 'AM'
+      }
+    }
     handleChangeTime(date) {
-      this.setState({
-        startDate: date
-      });
+      let formattedTime = this.formatTime(date)
+      this.props.startDate(formattedTime)
     }
 
     handleChangeTimeEnd(date) {
-      this.setState({
-        endDate: date
-      });
+      let formattedTime = this.formatTime(date)
+      this.props.endDate(formattedTime)
     }
 
     render(props){
@@ -98,12 +107,10 @@ class WhenWhere extends React.Component{
                         required
                         id="location"
                         type="location"
-                        name="location"
+                        name="addLocation"
                         label="Location"
                         onChange={e => {
-                        if(this.state.location){
-                            this.state.location(e.target.value)
-                        }
+                            this.props.addLocation(e.target.value)
                         }}
                         placeholder="City"
                     />
@@ -170,8 +177,8 @@ class WhenWhere extends React.Component{
                 value={this.state.recurrence}
                 onChange={this.handleChanges}
                 inputProps={{
-                  name: 'recurrence',
-                  id: 'recurrence',
+                  name:'addRecurrence',
+                  id:'recurrence',
                 }}
                   >
                 <MenuItem value={1}> Every Week.</MenuItem>

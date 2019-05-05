@@ -10,8 +10,8 @@ import Button from '@material-ui/core/Button';
 
 import CategoryAndDescription from "../../containers/CategoryAndDescriptionContainer";
 import UserInfo from "../../containers/UserInfoContainer";
-import WhenWhere from "./WhenWhere";
-// import Confirmation from "./Confirmation"
+import WhenWhere from "../../containers/WhenWhereContainer";
+import Confirmation from "../../containers/ConfirmationContainer"
 
 
 const styles = theme => ({
@@ -65,7 +65,7 @@ function getStepContent(step) {
     case 2:
       return <WhenWhere/>
     case 3:
-    return <WhenWhere/>  
+    return <Confirmation/>  
     default:
       return 'Unknown step';
   }
