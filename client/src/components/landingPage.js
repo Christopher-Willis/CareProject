@@ -6,8 +6,9 @@ class landingPage extends React.Component {
         return (
             <div>
                 <header>
+                <img src="logoGP.png" alt="Grace Place logo"/>
                     <div className="logo">
-                    <img src="https://careportal.org/wp-content/uploads/2019/01/careportal-logo.png" alt="Care Portal Logo"/>
+                        <img src="https://careportal.org/wp-content/uploads/2019/01/careportal-logo.png" alt="Care Portal Logo"/>
                     </div>
                 </header>
                 <main>

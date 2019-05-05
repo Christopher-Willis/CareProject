@@ -152,3 +152,8 @@ body{
     border-radius: 20px;
     font-size: 20px
     }
+
+    .mLogo{
+        height: 200px;
+        margin: 10px;
+    }
