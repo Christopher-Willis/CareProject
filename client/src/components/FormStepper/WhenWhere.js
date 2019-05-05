@@ -57,6 +57,7 @@ class WhenWhere extends React.Component{
         startDate: new Date(),
         endDate: new Date(),
         location: '',
+        organization: '',
         daysMap: ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
         recurrence: '',
     };
@@ -107,6 +108,21 @@ class WhenWhere extends React.Component{
                         placeholder="City"
                     />
                 </Grid>
+                <Grid item xs={12}>
+                    <TextField
+                        required
+                        id="organization"
+                        type="organization"
+                        name="organization"
+                        label="Church"
+                        onChange={e => {
+                        if(this.state.organization){
+                            this.state.organization(e.target.value)
+                        }
+                        }}
+                        placeholder="City"
+                    />
+                </Grid>
             <Grid item xs={12}>
               <div>
                 {this.state.daysMap.map((day, i) => {
@@ -123,7 +139,7 @@ class WhenWhere extends React.Component{
                 })}
               </div>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={6}>
               <FormLabel>Start Time </FormLabel>
               <DatePicker
                   selected={this.state.startDate}
@@ -135,7 +151,7 @@ class WhenWhere extends React.Component{
                   timeCaption="Time"
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={6}>
               <FormLabel>End Time </FormLabel>
                 <DatePicker
                     selected={this.state.endDate}
@@ -147,7 +163,7 @@ class WhenWhere extends React.Component{
                     timeCaption="Time"
                 />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={6}>
             <div>
               <InputLabel htmlFor="recurrence">How Often?</InputLabel>
               <Select
@@ -158,9 +174,9 @@ class WhenWhere extends React.Component{
                   id: 'recurrence',
                 }}
                   >
-                <MenuItem value={1}>Every Week.</MenuItem>
-                <MenuItem value={2}>Bi-Weekly</MenuItem>
-                <MenuItem value={3}>Monthly</MenuItem>
+                <MenuItem value={1}> Every Week.</MenuItem>
+                <MenuItem value={2}> Bi-Weekly</MenuItem>
+                <MenuItem value={3}> Monthly</MenuItem>
               </Select> 
           </div>         
             </Grid>
