@@ -36,10 +36,10 @@ class landingPage extends React.Component {
                         <Link to="/form"><button className="b1">Donate Items</button></Link>
                     </div>
                     <div className="trade">
-                        <h3>I am Skilled!</h3>
+                        <h3>Donate Your Skills!</h3>
                         <img className="don" src="https://images.unsplash.com/photo-1500837744038-ec60054ed01e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" alt=""/>
                         <p>Are you a Skilled Tradesman? </p>
-                        <Link to="/form"><button className="b0">Donate Your Skills</button></Link>
+                        <Link to="/form"><button className="b0">Donate Skills</button></Link>
                     </div>
                     <div className="help">
                         <h3>I want to help</h3>
