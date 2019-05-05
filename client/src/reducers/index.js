@@ -1,5 +1,11 @@
 import { combineReducers } from 'redux'
 
+function setToZero(){
+  let d = new Date();
+  return d.setHours(0,0,0,0)
+}
+
+
 function category(state="", action){
   if(action.type === "ADD_CATEGORY"){
     return action.value
@@ -48,14 +54,14 @@ function days(state={}, action){
   return state;
 }   
 
-function startDate(state="", action){
+function startDate(state=setToZero(), action){
   if(action.type === "ADD_STARTDATE"){
     return action.value
   }
   return state;
 } 
 
-function endDate(state="", action){
+function endDate(state=setToZero(), action){
   if(action.type === "ADD_ENDDATE"){
     return action.value
   }
