@@ -20,7 +20,8 @@ const styles = theme => ({
   },
   button: {
     marginRight: theme.spacing.unit,
-    margin: 10
+    margin: 10,
+    paddingBottom: 10
   },
   completed: {
     display: 'inline-block',
@@ -48,10 +49,6 @@ const styles = theme => ({
   buttons: {
     display: 'flex',
     justifyContent: 'flex-end',
-  },
-  button: {
-    marginTop: theme.spacing.unit * 3,
-    marginLeft: theme.spacing.unit,
   }
 });
 
@@ -181,17 +178,17 @@ class FormStepper extends React.Component {
     return (
         <main className={classes.layout}>
     <Card className={classes.root}>
-    <Stepper activeStep={activeStep}>
-        {steps.map((label, index) => {
-            const props = {};
-            const labelProps = {};
-            return (
-            <Step key={label} {...props}>
-            <StepLabel {...labelProps}>{label}</StepLabel>
-            </Step>
-            );
-        })}
-    </Stepper>
+            <Stepper activeStep={activeStep}>
+                {steps.map((label, index) => {
+                    const props = {};
+                    const labelProps = {};
+                    return (
+                    <Step key={label} {...props}>
+                    <StepLabel {...labelProps}>{label}</StepLabel>
+                    </Step>
+                    );
+                })}
+            </Stepper>
     <div>
         {activeStep === steps.length ? (
     <div>
@@ -199,7 +196,8 @@ class FormStepper extends React.Component {
     <Button
         onClick={this.handleReset}
         className={classes.button}
-        color="danger"
+        style={{backgroundColor: "#F63",
+            color: 'white'}}
         >
     Reset
     </Button>
@@ -222,7 +220,8 @@ class FormStepper extends React.Component {
     {activeStep !== steps.length - 1 ? (
     <Button
         variant="contained"
-        color="primary"
+        style={{backgroundColor: "#F63",
+            color: 'white'}}
         onClick={this.handleNext}
         className={classes.button}
         disabled={this.state.value === -1 ? true : false}
@@ -233,7 +232,8 @@ class FormStepper extends React.Component {
     this.state.warning && (
         <Button
         variant="contained"
-        color="primary"
+        style={{backgroundColor: "#F63",
+            color: 'white'}}
         onClick={(e) => this.handleSubmit(e)}
         className={classes.button}
         disabled={this.state.value === -1 ? true : false}
