@@ -157,7 +157,7 @@ class FormStepper extends React.Component {
     if(notValid){
       return alert('you are missing a field')
     }
-    fetch('/things', {
+    fetch('http://localhost:3001/things', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json" 
