@@ -16,7 +16,7 @@ import Confirmation from "../../containers/ConfirmationContainer"
 
 const styles = theme => ({
   root: {
-    width: '90%',
+    width: '90%'
   },
   button: {
     marginRight: theme.spacing.unit,

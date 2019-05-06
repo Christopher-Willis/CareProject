@@ -1,6 +1,6 @@
 body{
     font-family: 'Roboto', sans-serif;
-    margin: 0
+    margin: 0 
 }
 header{
     display: flex;
@@ -16,7 +16,8 @@ header{
 .logo img{
     height: 16px;
     /* border: 2px green solid */
-    margin: 2em
+    margin: 2em;
+    margin-top:0;
 }
 .wraper{
     display: flex;
@@ -33,7 +34,8 @@ nav a{
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
+
 }
 .nv{
     animation: lightSpeedIn 1s ease-in;
@@ -62,6 +64,7 @@ nav a{
     }
 }
 .container {
+    margin: 10px;
     display: inline-block;
     cursor: pointer;
     /* position: absolute; */
@@ -121,7 +124,7 @@ h1{
     color: white;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 10px #888888
+    box-shadow: 2px 2px #D81111;
 }
 .thing{
     border: 2px #f63 solid;
@@ -133,8 +136,7 @@ h1{
     border-radius: 25px;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 10px #888888
-
+    box-shadow: 2px 2px #D81111;
 }
 .trade{
     background: #f63;
@@ -147,7 +149,7 @@ h1{
     margin: 1.5em;
     border-radius: 25px;
     color: white;
-    box-shadow: 5px 10px #888888
+    box-shadow: 2px 2px #D81111;
 }
 .help{
     border: 2px #f63 solid;
@@ -159,9 +161,11 @@ h1{
     border-radius: 25px;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 10px #888888;
+    box-shadow: 2px 2px #D81111;
 }
 h3{
+    margin: 0px;
+    padding: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -172,9 +176,7 @@ h3{
     border-radius: 20px;
     font-size: 20px;
     padding: 15px;
-    box-shadow: 5px 10px #888888;
-    border: 2px whitesmoke solid;
-
+    box-shadow: 2px 2px #D81111;
 }
 .b1{
     color: whitesmoke;
@@ -182,8 +184,7 @@ h3{
     border-radius: 20px;
     font-size: 20px;
     padding: 15px;
-    box-shadow: 5px 5px lightslategray;
-    border: 2px whitesmoke solid;
+    box-shadow: 2px 2px #D81111;
     
 }
 .b1:hover{
@@ -200,8 +201,8 @@ h3{
 }
 .don{
     width: 250px;
-    height: 250px;
-    margin: 1.5em;
+    height: 175px;
+    margin: 1em;
     border-radius: 20px;
     box-shadow: 5px 10px #fee
 }
@@ -246,4 +247,19 @@ footer{
         flex-direction: row;
 
     } */
+}
+p{
+    padding:0px;
+    margin-top: 0px
+}
+.nv{
+    margin-top: 5px;
+}
+
+#popup {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    z-index: 999;
+    background-color: rgba(255,255,255,.8)
 }

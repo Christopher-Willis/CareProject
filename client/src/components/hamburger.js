@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import './landingPage.css';
+import './carePort.css';
 
 
 class Hamburger extends React.Component {
@@ -36,7 +36,7 @@ class Hamburger extends React.Component {
         let extendedBar = ""
         if(this.state.extended){
             extendedBar=
-                <div id="popup_window">
+                <div className="popup_window">
                     <nav className="nv">
                         <Link className="r" to="/">Grace Place Home</Link>
                         <Link to="/">My Impact</Link>

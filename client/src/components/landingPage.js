@@ -1,35 +1,47 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import logo from './logo.png'
-import './landingPage.css';
+import logo from './logo.png';
+import './carePort.css';
+import Hamburger from './hamburger';
 
 class landingPage extends React.Component {
     render() {
         return (
             <div>
-                <header>
-                <img className="mLogo" src={logo} alt="Grace Place logo"/>
-                    <div className="logo">
+                <div className="logo">
                         <img src="https://careportal.org/wp-content/uploads/2019/01/careportal-logo.png" alt="Care Portal Logo"/>
                     </div>
-                </header>
+                <div className="wraper">
+                    <div className="vc_single_image-wrapper rolo   vc_box_border_grey">
+                        <img width="400" height="350" src="https://careportal.org/wp-content/uploads/2019/02/Little-Things-Families-Together-2.gif" className="vc_single_image-img attachment-full" alt="Little things that help keep families together"/>
+                    </div>
+                </div>
+
                 <main>
-                    <h1>Search For Your Saving Grace!</h1>
                     <div className="time">
                         <h3>Donate Your Time</h3>
-                        <Link className="center" to= "/form"><button className="b0">Donate Time </button></Link>
+                        <img className="don" src="https://images.unsplash.com/photo-1439920120577-eb3a83c16dd7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" alt=""/>
+                        <p>Register to be helping hands!</p>
+                        
+                        <Link to="/time"><button className="b0"> Donate Time </button></Link>
                     </div>
                     <div className="thing">
-                        <h3>I Have an Item(s) to Donate!</h3>
-                        <Link className="center" to="/form"><button className="b1">Donate Item</button></Link>
+                        <h3> Donate Items and Things</h3>
+                        <img className="don" src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt=""/>
+                        <p>Do you have old or unwanted items?</p>
+                        <Link to="/time"><button className="b1">Donate Items</button></Link>
                     </div>
                     <div className="trade">
-                        <h3>I'm Skilled!</h3>
-                        <Link className="center" to="/form"><button className="b0">Donate Your Skills</button></Link>
+                        <h3>Donate Your Skills!</h3>
+                        <img className="don" src="https://images.unsplash.com/photo-1500837744038-ec60054ed01e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" alt=""/>
+                        <p>Are you a Skilled Tradesman? </p>
+                        <Link to="/time"><button className="b0">Donate Skills</button></Link>
                     </div>
                     <div className="help">
-                        <h3>I just want to help!</h3>
-                        <Link className="center" to="/form" ><button className="b1">Get Started</button></Link>
+                        <h3>I want to help</h3>
+                        <img className="don" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt=""/>
+                        <p>Not sure how to help? </p>
+                        <Link to="/time"><button className="b1">Donate </button></Link>
                     </div>
                 </main>
             </div>
