@@ -45,7 +45,6 @@ class WhenWhere extends React.Component{
       super(props);
       this.classes = props.classes;
       this.state = {
-        days: {
             mon: false,
             tue: false,
             wed: false,
@@ -53,7 +52,6 @@ class WhenWhere extends React.Component{
             fri: false,
             sat: false,
             sun: false,
-        },
         startDate: new Date(),
         endDate: new Date(),
         location: '',
@@ -65,11 +63,12 @@ class WhenWhere extends React.Component{
       this.handleChangeTimeEnd = this.handleChangeTimeEnd.bind(this);
 
       this.handleCheckbox = name => event => {
-        this.props.addDays[name](event.target.checked);
+        this.setState({name: event.target.checked})
       };
 
       this.handleChanges = event => {
         this.props[event.target.name](event.target.value);
+        this.setState({recurrence: event.target.value})
       };
     }
     hours12(date) { 
@@ -86,12 +85,15 @@ class WhenWhere extends React.Component{
     }
     handleChangeTime(date) {
       let formattedTime = this.formatTime(date)
-      this.props.startDate(formattedTime)
+      this.props.addStartDate(formattedTime)
+      this.setState({startDate: date})
     }
 
     handleChangeTimeEnd(date) {
       let formattedTime = this.formatTime(date)
-      this.props.endDate(formattedTime)
+      this.props.addEndDate(formattedTime)
+      this.setState({endDate: date})
+
     }
 
     render(props){
@@ -139,7 +141,7 @@ class WhenWhere extends React.Component{
                   className={this.classes.inline}
                   checked={this.state.day}
                   onChange={this.handleCheckbox(day)}
-                  value={this.state.day}
+                  value={this.props.addDays[day]}
                   color="primary"
                 />
                 </div>
@@ -153,7 +155,7 @@ class WhenWhere extends React.Component{
                   onChange={this.handleChangeTime}
                   showTimeSelect
                   showTimeSelectOnly
-                  timeIntervals={1}
+                  timeIntervals={15}
                   dateFormat="h:mm aa"
                   timeCaption="Time"
               />
@@ -165,7 +167,7 @@ class WhenWhere extends React.Component{
                     onChange={this.handleChangeTimeEnd}
                     showTimeSelect
                     showTimeSelectOnly
-                    timeIntervals={1}
+                    timeIntervals={15}
                     dateFormat="h:mm aa"
                     timeCaption="Time"
                 />
